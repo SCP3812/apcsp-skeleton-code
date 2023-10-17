@@ -20,7 +20,17 @@ def wikipedia_game_solver(start_page, target_page):
     print('Working on it...')
     start_time = time.time()
   
-    # FINISH THE CODE HERE
+    visited = []
+    queue = Queue()
+    path = [] 
+
+    queue.put(start_page.title) 
+
+    while not queue.empty():
+        # get from queue 
+        # add to visited
+        # fetch the links
+         
 
     end_time = time.time()
     print("This algorithm took", end_time-start_time, "seconds to run!")
