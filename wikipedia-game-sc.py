@@ -2,7 +2,7 @@ from queue import Queue
 import wikipediaapi
 import time
 
-user_agent = "MsOrret'sWikipediaGame/1.0 (orret.deborah@pusd.us)"
+user_agent = "WojakBoy/1.0 (Gr5974Is0206@pusd.us)"
 
 wiki_wiki = wikipediaapi.Wikipedia(user_agent, "en")
 
