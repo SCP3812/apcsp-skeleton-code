@@ -59,7 +59,7 @@ def wikipedia_game_solver(start_page, target_page):
 
 # Example usage:
 start_page = wiki_wiki.page('Furry fandom')
-target_page = wiki_wiki.page('Adolf Hitler')
+target_page = wiki_wiki.page('Heinrich Himmler')
 path = wikipedia_game_solver(start_page, target_page)
 print("Shortest path:", path)
 
