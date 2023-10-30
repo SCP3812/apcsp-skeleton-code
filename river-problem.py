@@ -3,10 +3,8 @@ import copy
 # Define a function that takes in a state as a dictionary and returns True if the state meets the conditions and False if it does not
 def isValid(state):
     if state["wolf"] == state["goat"] and state["person"] != state["goat"] or state["goat"] == state["cabbage"] and state["person"] != state["goat"]:
-        print("False")
         return False
     else:
-        print("True")
         return True
 
 # Define a function that takes in a state as a dictionary and returns a list of all valid states that can be reached from 1 move of the input state
@@ -43,13 +41,13 @@ def dfs(current_state, win_state):
     if current_state == win_state:
         return True
 
+    visited.append(current_state)
     next_states = get_next_states(current_state)
-    visited.append(next_states)
 
-    for state in next_states:
-        if state not in visited:
-            path.append(state)
-            if dfs(state, win_state) == True:
+    for next_state in next_states:
+        if next_state not in visited:
+            path.append(next_state)
+            if dfs(next_state, win_state):
                 return True
             path.pop()
     
