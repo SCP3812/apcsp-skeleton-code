@@ -18,12 +18,11 @@ def get_next_states(state):
 
     for key in state:
         if state["person"] == state[key] and key != "person":
-            same_side.append(state[key])
+            same_side.append(key)
     
     for thing in same_side: 
         temp_state = copy.deepcopy(state)
         temp_state["person"] = not state["person"]
-        temp_state[thing] = not state[thing]
         temp_state[thing] = not state[thing]
 
         if isValid(temp_state) == True:
@@ -48,7 +47,7 @@ def dfs(current_state, win_state):
     visited.append(next_states)
 
     for state in next_states:
-        if state not in visited_states:
+        if state not in visited:
             path.append(state)
             if dfs(state, win_state) == True:
                 return True
@@ -69,7 +68,7 @@ win_state = {
     "person": True
 }
 
-visited_states = [initial_state]
+visited = [initial_state]
 path = []
 
 if dfs(initial_state, win_state):
